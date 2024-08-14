@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex Interior Services</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div id="invoice">
+    <header>
+      <img src="assets/flex interior services (3).png" alt="flex interior services" width="140" height="120">
+     
+     
+    </header>
+
+    <section class="invoice-details">
+      
+      <div class="client-info">
+        <h3 class="client-title">BILL TO:</h3>
+        <div class="client-inputs">
+          <input type="text" id="clientName" value="client name" autocomplete="off" onkeyup="updateTotals()"/>
+          <input type="text" class="clientAddress" id="clientAddress" value="Client Address" autocomplete="off"/>
+          <input type="text" class="clientContacts" id="clientContacts" value="Client Contacts" autocomplete="off"/>
+        </div>
+       
+      </div>
+      <div class="invoice-info">
+        <h1 class="invoice-title">INVOICE</h1>
+        <div class="invoice-number">
+          <p class="n">Invoice Number: <input type="text" id="invoiceNumber" value="12345" autocomplete="off"/></p>
+        <p class="d"> Invoice Date: <span id="invoiceDate"></span></p> <!-- Auto-fill date -->
+        </div>
+        
+      </div>
+      
+    </section>
+
+    <section class="invoice-items">
+      <table class="headers">
+        <thead >
+          <tr>
+            <th class="qty"><div>QTY</div></th>
+            <th class="particulars"><div>PARTICULARS</div></th>
+            <th class="price"><div>@</div></th>
+            <th class="price"><div>KSHS</div></th>
+            <th class="price"><div>CTS</div></th>
+          
+         
+            <th class="no-print"></th> <!-- Hide actions on print -->
+          </tr>
+        </thead>
+      </table>
+        
+        <table>
+  
+        <thead>
+          <tr>
+            <th class="qty"></th>
+            <th class="particulars"></th>
+            <th class="price"></th>
+            <th class="price"></th>
+            <th class="price"></th>
+          
+         
+            <th class="no-print"></th> <!-- Hide actions on print -->
+          </tr>
+        </thead>
+        <tbody id="itemTable">
+          <!-- Items will be added dynamically -->
+        </tbody>
+      </table>
+      <div class="no-print">
+        <button onclick="addItem()">ADD</button>
+      </div>
+     
+    </section>
+
+    
+<div class="two">
+  <div class="company-details"> 
+    <p >FLEX INTERIOR SERVICES LTD;</p>
+    <p> Defining Interior Trends in Kenya and Beyond.</p>
+    <p class="gmail"><img src="assets/icons8-gmail-10.png" alt="gmail" width="10" height="10"><span> flexinterior123@gmail.com</span></p>
+    <p class="contact"><img src="assets/icons8-phonecall-10.png" alt="phone" width="10" height="10"> <span> +2547 11 327 918</span></p>
+    <p class="contact"><img src="assets/icons8-location-12.png" alt="map" width="10" height="10"> <span> Tsavo road benjos house no 44 3rd floor i, Nairobi, Kenya</span></p>
+  </div>
+  <section class="invoice-total">
+
+    <p class="subtotal">Subtotal: <span id="subtotal">0.00</span></p>
+    <p class="discount">Discount (%): <span><input type="number" id="discountInput" value="0" onchange="populateInvoice(invoiceData)" /></span> <span class="no-print" id="discount">0.00</span></p>
+   
+  
+  </section>
+</div>
+    
+
+    <section class="invoice-final">
+    <div class="total-div">
+      <div class="thankyou">
+      <h1>Thank you for your business!</h1>
+     </div>
+ <p class="total">TOTAL: <span id="total">0.00</span></p>
+</div>
+</section>
+
+
+    
+
+    <div class="no-print">
+      <button onclick="printInvoice()">Print Invoice</button>
+    </div>
+  </div>
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
